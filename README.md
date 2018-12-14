@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/mycolam60/rozetka/_apis/build/status/rozetka?branchName=master)](https://dev.azure.com/mycolam60/rozetka/_build/latest?definitionId=2?branchName=master)
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
