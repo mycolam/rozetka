@@ -69,11 +69,11 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <suiteXmlFiles>
+                    <!--suiteXmlFiles>
                         <suiteXmlFile>
                             testng.xml
                         </suiteXmlFile>
-                    </suiteXmlFiles>
+                    </suiteXmlFiles-->
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -85,7 +85,7 @@
             </plugin>
             <!--Needed only to show reports locally. Run jetty:run and
             open localhost:8080 to show the report-->
-            <plugin>
+            <!--plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.2.10.v20150310</version>
@@ -94,7 +94,7 @@
                     <stopKey>stop</stopKey>
                     <stopPort>1234</stopPort>
                 </configuration>
-            </plugin>
+            </plugin-->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
