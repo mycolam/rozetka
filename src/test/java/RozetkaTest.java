@@ -2,10 +2,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.ProductPage;
 import pages.home.Authorization;
 import pages.home.Search;
@@ -13,6 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static config.Values.host;
 import listeners.AllureOnEventListener;
+
 
 /**
  * Created by mycola on 17.12.2018.
@@ -22,10 +20,10 @@ import listeners.AllureOnEventListener;
 
 public class RozetkaTest {
 
-    @BeforeClass/* Метод, выполняющийся перед началом тест-сьюта */
-    public void begin() {
+    @BeforeMethod
+    public void start() {
         com.codeborne.selenide.Configuration.browser = "chrome";      //браузер для тестов
-        com.codeborne.selenide.Configuration.timeout = 40000;         //максимальный интервал ожидания вебэлементов в милисекундах
+        com.codeborne.selenide.Configuration.timeout = 80000;         //максимальный интервал ожидания вебэлементов в милисекундах
         com.codeborne.selenide.Configuration.savePageSource = false;  //не сохранять дополнительные настройки
         WebDriver myWebDriver = null;
         ChromeOptions options = new ChromeOptions();  //создать обьект для установки опций браузера хром
@@ -36,8 +34,9 @@ public class RozetkaTest {
         WebDriverRunner.setWebDriver(myWebDriver); //запуск браузера
     }
 
-    @AfterClass
-    public void tearDown() {
+
+    @AfterMethod
+    public void stop() {
         getWebDriver().quit();
     }
 
@@ -54,6 +53,7 @@ public class RozetkaTest {
 
     @Test(priority = 2, description = "Search Test")
     public void searchTest() {
+        open(host);
         Search search = new Search();
         search.setSearchField();
         search.clickSearchButton();
@@ -62,6 +62,7 @@ public class RozetkaTest {
 
     @Test(priority = 3, description = "Purchase Test")
     public void purchaseTest() {
+        open(host);
         ProductPage productPg = new ProductPage();
         productPg.clickPurchaseButton();
         productPg.checkCartAppeared();
