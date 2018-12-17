@@ -16,7 +16,7 @@ steps:
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x86'
+    jdkArchitectureOption: 'x32'
     publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean test'
