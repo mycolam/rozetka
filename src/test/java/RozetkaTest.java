@@ -20,8 +20,18 @@ import listeners.AllureOnEventListener;
 
 public class RozetkaTest {
 
+    @BeforeClass
+    public void prepare() {
+        String chrome = System.getProperty("ChromeWebDriver", "chrome webdriver not found");
+        String chrome1 = System.getenv("ChromeWebDriver");
+        System.out.println(chrome);
+        System.out.println(chrome1);
+        System.out.println("--------------------");
+    }
+
     @BeforeMethod
     public void start() {
+
         com.codeborne.selenide.Configuration.browser = "chrome";      //браузер для тестов
         com.codeborne.selenide.Configuration.timeout = 20000;         //максимальный интервал ожидания вебэлементов в милисекундах
         com.codeborne.selenide.Configuration.savePageSource = false;  //не сохранять дополнительные настройки
