@@ -45,7 +45,7 @@ public class Authorization extends Page {
         SelenideElement button = $(byXpath("//button[@class='modal__close js-modal-close']"));
         button.shouldNotBe(visible);
         Sleep(4);
-        button = $(byXpath("//a[@href='https://my.rozetka.com.ua/signin/']"));
+        button = $(byXpath("//a[@href='https://my.rozetka.com.ua/']"));
         assertTrue("Имя пользователя не корректно"+
                    "\nОжидалось : " + Values.user +
                    "\nФактически: " + button.getText(),
