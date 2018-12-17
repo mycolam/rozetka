@@ -54,7 +54,6 @@ public class RozetkaTest {
 
     @Test(priority = 2, description = "Search Test")
     public void searchTest() {
-        open(host);
         Search search = new Search();
         search.setSearchField();
         search.clickSearchButton();
