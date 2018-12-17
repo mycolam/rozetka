@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.ProductPage;
 import pages.home.Authorization;
@@ -11,16 +12,20 @@ import pages.home.Search;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static config.Values.host;
+import listeners.AllureOnEventListener;
 
 /**
  * Created by mycola on 17.12.2018.
  */
+
+@Listeners({AllureOnEventListener.class})  //"слушатель" для Allure-отчета
+
 public class RozetkaTest {
 
     @BeforeClass/* Метод, выполняющийся перед началом тест-сьюта */
     public void begin() {
         com.codeborne.selenide.Configuration.browser = "chrome";      //браузер для тестов
-        com.codeborne.selenide.Configuration.timeout = 20000;         //максимальный интервал ожидания вебэлементов в милисекундах
+        com.codeborne.selenide.Configuration.timeout = 40000;         //максимальный интервал ожидания вебэлементов в милисекундах
         com.codeborne.selenide.Configuration.savePageSource = false;  //не сохранять дополнительные настройки
         WebDriver myWebDriver = null;
         ChromeOptions options = new ChromeOptions();  //создать обьект для установки опций браузера хром
