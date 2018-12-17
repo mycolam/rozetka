@@ -25,7 +25,7 @@ public class RozetkaTest {
         String chrome = System.getenv("ChromeWebDriver");
         String firefox = System.getenv("GeckoWebDriver");
         String ie = System.getenv("IEWebDriver");
-        System.setProperty("webdriver.chrome.driver", chrome);
+        System.setProperty("webdriver.chrome.driver", chrome + "\\chromedriver.exe");
         System.out.println(chrome);
         System.out.println("--------------------");
     }
