@@ -52,7 +52,7 @@ public class RozetkaTest {
         auth.checkUserName();
     }
 
-    @Test(priority = 3, description = "Search Test")
+    @Test(priority = 2, description = "Search Test")
     public void searchTest() {
         System.out.println("======= searchTest ========");
         open(host);
@@ -62,7 +62,7 @@ public class RozetkaTest {
         search.checkSearchResult();
     }
 
-    @Test(priority = 2, description = "Purchase Test")
+    @Test(priority = 3, description = "Purchase Test")
     public void purchaseTest() {
         System.out.println("======= purchaseTest ========");
         open(host);
