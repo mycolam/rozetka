@@ -5,6 +5,7 @@ import config.Values;
 import io.qameta.allure.Step;
 import pages.Page;
 
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -20,8 +21,8 @@ public class Search extends Page {
 
     @Step("Enter search field")
     public void setSearchField() {
-        SelenideElement input = $(byXpath("//div[@role='search']/descendant::input")).shouldBe(visible);
-        input.setValue(searchText);
+        SelenideElement input = $(byXpath("//div[@role='search']")).shouldBe(exist);
+        input.$(byXpath("descendant::input")).setValue(searchText);
     }
 
     @Step("Click Search button")

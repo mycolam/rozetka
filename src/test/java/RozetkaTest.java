@@ -23,7 +23,7 @@ public class RozetkaTest {
     @BeforeMethod
     public void start() {
         com.codeborne.selenide.Configuration.browser = "chrome";      //браузер для тестов
-        com.codeborne.selenide.Configuration.timeout = 80000;         //максимальный интервал ожидания вебэлементов в милисекундах
+        com.codeborne.selenide.Configuration.timeout = 20000;         //максимальный интервал ожидания вебэлементов в милисекундах
         com.codeborne.selenide.Configuration.savePageSource = false;  //не сохранять дополнительные настройки
         WebDriver myWebDriver = null;
         ChromeOptions options = new ChromeOptions();  //создать обьект для установки опций браузера хром
@@ -42,6 +42,7 @@ public class RozetkaTest {
 
     @Test(priority = 1, description = "Authorization Test", enabled = true)
     public void authorizationTest() {
+        System.out.println("======= authorizationTest ========");
         open(host);
         Authorization auth = new Authorization();
         auth.personalAreaButtonClick();
@@ -53,6 +54,7 @@ public class RozetkaTest {
 
     @Test(priority = 2, description = "Search Test")
     public void searchTest() {
+        System.out.println("======= searchTest ========");
         open(host);
         Search search = new Search();
         search.setSearchField();
@@ -62,6 +64,7 @@ public class RozetkaTest {
 
     @Test(priority = 3, description = "Purchase Test")
     public void purchaseTest() {
+        System.out.println("======= purchaseTest ========");
         open(host);
         ProductPage productPg = new ProductPage();
         productPg.clickPurchaseButton();
