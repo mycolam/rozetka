@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'vs2015-win2012r2'
+  vmImage: 'vs2017-win2016'
 
 steps:
 - task: Maven@3
@@ -19,4 +19,4 @@ steps:
     jdkArchitectureOption: 'x32'
     publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean test'
+    goals: 'clean test site'
