@@ -19,7 +19,5 @@ steps:
     jdkArchitectureOption: 'x32'
     publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean test'
-- task: Maven@3
-  inputs:
-    goals: 'site'
+    testRunTitle: 'UI Selenium Tests'
+    goals: 'clean test site'
