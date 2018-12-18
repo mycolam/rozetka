@@ -41,6 +41,7 @@ public class Authorization extends Page {
 
     @Step("Click Enter button")
     public void enterButtonClick() {
+        makeScreenshot();
         SelenideElement button = $(byXpath("//button[@class='button button_color_navy auth-modal__login-button']"));
         if (!button.exists()) button = $(byXpath("//button[@name='auth_submit']"));
         button.click();

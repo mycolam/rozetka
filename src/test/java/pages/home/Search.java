@@ -28,6 +28,7 @@ public class Search extends Page {
 
     @Step("Click Search button")
     public void clickSearchButton() {
+        makeScreenshot();
         SelenideElement button = $(byXpath("//button[@class='btn-link-i js-rz-search-button']"));
         if (!button.exists()) button = $(byXpath("//button[@class='button button_color_green search__button']"));
         button.click();
