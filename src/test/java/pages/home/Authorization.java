@@ -1,7 +1,6 @@
 package pages.home;
 import com.codeborne.selenide.SelenideElement;
 import config.Values;
-import io.qameta.allure.Step;
 import pages.Page;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -14,14 +13,12 @@ import static org.testng.AssertJUnit.assertTrue;
  */
 public class Authorization extends Page {
 
-    @Step("Click personal area button")
     public void personalAreaButtonClick() {
         SelenideElement link = $(byXpath("//a[@href='https://my.rozetka.com.ua/signin/']"));
         link.click();
         Sleep(2);
     }
 
-    @Step("Enter login")
     public void setLogin() {
         if ($("#auth_email").exists()) {
             $("#auth_email").setValue(Values.login);
@@ -30,7 +27,6 @@ public class Authorization extends Page {
         }
     }
 
-    @Step("Enter password")
     public void setPassword() {
         if ($("#auth_pass").exists()) {
             $("#auth_pass").setValue(Values.password);
@@ -39,7 +35,6 @@ public class Authorization extends Page {
         }
     }
 
-    @Step("Click Enter button")
     public void enterButtonClick() {
         makeScreenshot();
         SelenideElement button = $(byXpath("//button[@class='button button_color_navy auth-modal__login-button']"));
@@ -47,7 +42,6 @@ public class Authorization extends Page {
         button.click();
     }
 
-    @Step("Check user name")
     public void checkUserName() {
         SelenideElement button = $(byXpath("//button[@class='modal__close js-modal-close']"));
         button.shouldNotBe(visible);
