@@ -22,7 +22,7 @@ public class ProductPage extends Page {
     @Step("Check cart is appeared")
     public void checkCartAppeared() {
         makeScreenshot();
-        SelenideElement header = $(byXpath("//h2[@class='cart-title']")).shouldBe(visible);
+        SelenideElement header = $(byXpath("//h2[@class='cart-title_ADDED_ERROR_']")).shouldBe(visible);
     }
 
 }
