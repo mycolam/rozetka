@@ -1,4 +1,5 @@
 import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -40,6 +41,7 @@ public class RozetkaTest {
         options.addArguments("--start-maximized");
         myWebDriver = new ChromeDriver(options);  //создать вебдрайвер с  указанными выше опциями
         WebDriverRunner.setWebDriver(myWebDriver); //запуск браузера
+        //myWebDriver.manage().window().setSize(new Dimension(1024, 662));
     }
 
 

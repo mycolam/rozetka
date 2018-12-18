@@ -21,9 +21,9 @@ public class Search extends Page {
 
     @Step("Enter search field")
     public void setSearchField() {
-        SelenideElement link = $(byXpath("//a[@href='https://my.rozetka.com.ua/signin/']"));
-        SelenideElement input = $(byXpath("//div[@role='search']")).shouldBe(exist);
-        input.$(byXpath("descendant::input")).setValue(searchText);
+        SelenideElement input = $(byXpath("//input[@name='search']"));
+        if (!input.exists()) input = $(byXpath("//input[@class='rz-header-search-input-text passive']"));
+        input.setValue(searchText);
     }
 
     @Step("Click Search button")
