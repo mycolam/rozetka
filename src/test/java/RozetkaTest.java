@@ -10,14 +10,12 @@ import pages.home.Search;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static config.Values.host;
-import listeners.AllureOnEventListener;
 
 
 /**
  * Created by mycola on 17.12.2018.
  */
 
-@Listeners({AllureOnEventListener.class})  //"слушатель" для Allure-отчета
 
 public class RozetkaTest {
 
